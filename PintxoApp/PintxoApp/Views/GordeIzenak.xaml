@@ -1,13 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PintxoApp.Views.GordeIzenak">
+             x:Class="PintxoApp.Views.GordeIzenak"
+             NavigationPage.HasBackButton="False"
+             NavigationPage.HasNavigationBar="False"
+             >
     <ContentPage.Content>
         <StackLayout>
             <Frame BackgroundColor="DarkGreen" Padding="24" CornerRadius="0">
                 <Label Text="PintxoAppuntator" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
             </Frame>
-            
+            <Picker x:Name="picker" Title="Numero de jugadores" 
+                    TitleColor="Black"
+                    TextColor="Black"
+                    FontAttributes="Italic"
+                    FontSize="24"
+                    HorizontalTextAlignment="Center"
+                    SelectedIndexChanged="picker_SelectedIndexChanged"
+                    >
+                <Picker.Items>
+                    <x:String>4 Jugadores</x:String>
+                    <x:String>5 Jugadores</x:String>
+                </Picker.Items>
+
+            </Picker>
+            <StackLayout x:Name="Nombres">
+                
+            </StackLayout>
 
         </StackLayout>
     </ContentPage.Content>

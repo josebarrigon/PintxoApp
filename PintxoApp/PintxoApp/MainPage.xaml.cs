@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PintxoApp.Views;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -12,12 +13,16 @@ namespace PintxoApp
     {
         public MainPage()
         {
+            NavigationPage.SetHasNavigationBar(this, false);
+            NavigationPage.SetHasBackButton(this, false);
             InitializeComponent();
         }
 
-        public void Hasi(object sender, EventArgs args)
+        public async void Hasi(object sender, EventArgs args)
         {
+            NavigationPage IzenakPage = new NavigationPage(new GordeIzenak());
 
+            await Navigation.PushAsync(IzenakPage);
         }
     }
 }
