@@ -4,12 +4,10 @@
              x:Class="PintxoApp.MainPage">
 
     <StackLayout>
-        <Frame BackgroundColor="AliceBlue" Padding="24" CornerRadius="0">
+        <Frame BackgroundColor="DarkOliveGreen" Padding="24" CornerRadius="0">
             <Label Text="PintxoAppuntator" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>
-        <Label Text="Start playing now" FontSize="Title" Padding="30,10,30,10"/>
-        
-        <Label Text="Partida hau irabazi dezakezu. Aupa zu!" FontSize="16" Padding="30,0,30,0"/>
+        <Label Text="Pintxito jolastu nahi?" FontSize="Title" Padding="30,10,30,10"/>
 
         <Button Text="Hasi" FontSize="26" Margin="110,100,110,10" Clicked="Hasi"></Button>
         
