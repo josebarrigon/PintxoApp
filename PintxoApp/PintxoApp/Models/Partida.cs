@@ -10,8 +10,9 @@ namespace PintxoApp.Models
         {
             NJugadores = nJugadores;
             Jugadores = new List<Jugador>();
-            Puntos = new int[((40 / NJugadores) - 1) * 2 + NJugadores * 2, NJugadores];
-            PintxosBool = new bool[((40 / NJugadores) - 1) * 2 + NJugadores * 2, NJugadores];
+            NRondas = ((40 / NJugadores) - 1) * 2 + NJugadores * 2;
+            Puntos = new int[NRondas, NJugadores];
+            PintxosBool = new bool[NRondas, NJugadores];
             Pintxos = new int[NJugadores];
             for(int i = 0; i < nJugadores; i++)
             {
@@ -29,6 +30,8 @@ namespace PintxoApp.Models
         private bool[,] PintxosBool { get; set; }
 
         public int NJugadores { get; set; }
+
+        public int NRondas { get; set; }
 
     }
 }
