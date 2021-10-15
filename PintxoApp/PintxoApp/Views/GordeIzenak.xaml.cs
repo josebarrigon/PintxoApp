@@ -33,18 +33,22 @@ namespace PintxoApp.Views
             Nombres.Children.Clear();
             for(int i = 0; i < nJugadores; i++)
             {
-                Entry nombre = new Entry();
-                nombre.Placeholder = "Nombre Jugador " + (i+1);
-                nombre.FontSize = 20;
+                Entry nombre = new Entry
+                {
+                    Placeholder = "Nombre Jugador " + (i + 1),
+                    FontSize = 20
+                };
                 Nombres.Children.Add(nombre);
             }
-            Button enviar = new Button();
-            enviar.Text = "Enviar";
+            Button enviar = new Button
+            {
+                Text = "Enviar"
+            };
             enviar.Clicked += GuardarNombres;
             Nombres.Children.Add(enviar);
 
         }
-        private void GuardarNombres(object sender, EventArgs e)
+        private async void GuardarNombres(object sender, EventArgs e)
         {
             string[] names = new string[nJugadores];
             for (int i = 0; i < nJugadores; i++)
@@ -53,6 +57,9 @@ namespace PintxoApp.Views
                 names[i] = entry.Text;
             }
             Partida partida = new Partida(nJugadores, names);
+
+            NavigationPage libretaPage = new NavigationPage(new Libreta(partida));
+            await Navigation.PushAsync(libretaPage);
         }
     }
 }

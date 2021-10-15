@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:dataGrid="clr-namespace:Xamarin.Forms.DataGrid;assembly=Xamarin.Forms.DataGrid"
+             x:Class="PintxoApp.Views.Libreta">
+    <ContentPage.Content>
+        <StackLayout x:Name="tabla">
+            <Grid >
+                <dataGrid:DataGrid BorderColor="Black" HeaderBordersVisible="True" x:Name="grid" ItemsSource="{Binding Partida}">
+                    <x:Arguments>
+                        <ListViewCachingStrategy>RetainElement</ListViewCachingStrategy>
+                    </x:Arguments>
+                    <dataGrid:DataGrid.HeaderLabelStyle>
+                        <Style TargetType="Label">
+                            <Setter Property="FontSize" Value="25" />
+                            <Setter Property="TextColor" Value="LightGreen" />
+                            <Setter Property="Padding" Value="5" />
+                        </Style>
+                    </dataGrid:DataGrid.HeaderLabelStyle>
+
+                    <dataGrid:DataGrid.Columns>
+                        <dataGrid:ColumnCollection x:Name="colNombres">
+                            <dataGrid:DataGridColumn Title="Name" PropertyName="Name" Width="1*"></dataGrid:DataGridColumn>
+                            <dataGrid:DataGridColumn Title="Name" PropertyName="Name" Width="1*"></dataGrid:DataGridColumn>
+                            <dataGrid:DataGridColumn Title="Name" PropertyName="Name" Width="1*"></dataGrid:DataGridColumn>
+                            <dataGrid:DataGridColumn Title="Name" PropertyName="Name" Width="1*"></dataGrid:DataGridColumn>
+                        </dataGrid:ColumnCollection>
+                    </dataGrid:DataGrid.Columns>
+
+                </dataGrid:DataGrid>
+
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

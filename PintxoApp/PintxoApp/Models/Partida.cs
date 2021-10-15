@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PintxoApp.Models
 {
-    class Partida
+    public class Partida
     {
         public Partida(int nJugadores,string[] nombres)
         {

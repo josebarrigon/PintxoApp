@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PintxoApp.Models
 {
-    class Jugador
+    public class Jugador
     {
         public Jugador(string nombre, int index)
         {
