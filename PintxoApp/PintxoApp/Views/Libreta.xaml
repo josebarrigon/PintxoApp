@@ -1,36 +1,41 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:dataGrid="clr-namespace:Xamarin.Forms.DataGrid;assembly=Xamarin.Forms.DataGrid"
+             xmlns:dataGrid="clr-namespace:Xamarin.Forms.DataGrid;assembly=Xamarin.Forms.DataGrid" xmlns:viewmodels="clr-namespace:PintxoApp.ViewModels" x:DataType="viewmodels:JugandoViewModel"
+             NavigationPage.HasBackButton="False"
+             NavigationPage.HasNavigationBar="False"
+             Shell.NavBarIsVisible="False"
              x:Class="PintxoApp.Views.Libreta">
+
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Name="headerStyle" TargetType="Label">
+                <Setter Property = "TextColor" Value="Black" />
+                <Setter Property = "FontSize"  Value="20" />
+                <Setter Property="HorizontalTextAlignment" Value="Center"></Setter>
+                <Setter Property="VerticalTextAlignment" Value="Center"></Setter>
+                <Setter Property="TextDecorations" Value="Underline"></Setter>
+            </Style>
+            <Label x:Key="Col" x:Name="Col" Grid.Row="0" Grid.Column="0" Text="9762.33" TextColor="Black" FontSize="18"/>
+            <dataGrid:DataGrid x:DataType="viewmodels:JugandoViewModel" x:Key="cDataGrid" x:Name="cDataGrid" 
+                               ItemsSource="{Binding Puntos}" IsRefreshing="{Binding IsRefreshing}" BackgroundColor="White" ActiveRowColor="Wheat">
+                
+            </dataGrid:DataGrid>
+            <dataGrid:PaletteCollection x:Name="pale" x:Key="pale">
+                <Color>#FFFFFF</Color>
+                <Color>#F2F2F2</Color>
+            </dataGrid:PaletteCollection>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
     <ContentPage.Content>
         <StackLayout x:Name="tabla">
-            <Grid >
-                <dataGrid:DataGrid BorderColor="Black" HeaderBordersVisible="True" x:Name="grid" ItemsSource="{Binding Partida}">
-                    <x:Arguments>
-                        <ListViewCachingStrategy>RetainElement</ListViewCachingStrategy>
-                    </x:Arguments>
-                    <dataGrid:DataGrid.HeaderLabelStyle>
-                        <Style TargetType="Label">
-                            <Setter Property="FontSize" Value="25" />
-                            <Setter Property="TextColor" Value="LightGreen" />
-                            <Setter Property="Padding" Value="5" />
-                        </Style>
-                    </dataGrid:DataGrid.HeaderLabelStyle>
+            <Grid x:Name="grid" BackgroundColor="White">
 
-                    <dataGrid:DataGrid.Columns>
-                        <dataGrid:ColumnCollection x:Name="colNombres">
-                            <dataGrid:DataGridColumn Title="Name" PropertyName="Name" Width="1*"></dataGrid:DataGridColumn>
-                            <dataGrid:DataGridColumn Title="Name" PropertyName="Name" Width="1*"></dataGrid:DataGridColumn>
-                            <dataGrid:DataGridColumn Title="Name" PropertyName="Name" Width="1*"></dataGrid:DataGridColumn>
-                            <dataGrid:DataGridColumn Title="Name" PropertyName="Name" Width="1*"></dataGrid:DataGridColumn>
-                        </dataGrid:ColumnCollection>
-                    </dataGrid:DataGrid.Columns>
-
-                </dataGrid:DataGrid>
 
             </Grid>
-
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

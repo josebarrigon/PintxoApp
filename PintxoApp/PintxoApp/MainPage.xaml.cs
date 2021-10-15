@@ -21,7 +21,7 @@ namespace PintxoApp
         public async void Hasi(object sender, EventArgs args)
         {
             NavigationPage IzenakPage = new NavigationPage(new GordeIzenak());
-
+            await Navigation.PopAsync();
             await Navigation.PushAsync(IzenakPage);
         }
     }

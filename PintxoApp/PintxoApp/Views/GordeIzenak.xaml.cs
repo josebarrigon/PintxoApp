@@ -29,12 +29,14 @@ namespace PintxoApp.Views
             var selectedItem = item.SelectedItem as String;
             string[] subs = selectedItem.Split(' ');
             nJugadores = Int32.Parse(subs[0]);
+            string[] defaultNombres = new string[] { "Iosu", "Eneko", "Hodei", "Aritz","Xabi" };
 
             Nombres.Children.Clear();
             for(int i = 0; i < nJugadores; i++)
             {
                 Entry nombre = new Entry
                 {
+                    Text = defaultNombres[i],
                     Placeholder = "Nombre Jugador " + (i + 1),
                     FontSize = 20
                 };
@@ -59,7 +61,7 @@ namespace PintxoApp.Views
             Partida partida = new Partida(nJugadores, names);
 
             NavigationPage libretaPage = new NavigationPage(new Libreta(partida));
-            await Navigation.PushAsync(libretaPage);
+            await Navigation.PushModalAsync(libretaPage);
         }
     }
 }
